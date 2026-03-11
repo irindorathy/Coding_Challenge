@@ -4,22 +4,24 @@ int main() {
     int arr[10], i, j, temp;
 
     printf("Enter 10 numbers:\n");
-    for(i = 0; i < 10; i++) {   // corrected
+    
+    for(i = 0; i < 10; i++) {
         scanf("%d", &arr[i]);
     }
 
-    // Bubble sort
+    // Bubble Sort
     for(i = 0; i < 9; i++) {
-        for(j = i + 1; j < 10; j++) {   // corrected
-            if(arr[i] > arr[j]) {
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+        for(j = 0; j < 9 - i; j++) {
+            if(arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
             }
         }
     }
 
     printf("Sorted numbers:\n");
+    
     for(i = 0; i < 10; i++) {
         printf("%d ", arr[i]);
     }
